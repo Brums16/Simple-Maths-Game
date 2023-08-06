@@ -8,10 +8,10 @@ html {
 
 }
 
+
 .App {
   text-align: center;
   max-width: 100%;
-
   top: 0;
   left: 0;
   margin: 0
@@ -48,8 +48,8 @@ html {
 }
 
 #newgame {
-  margin-top: 200px;
-  margin-bottom: 50px;
+  margin-top: 20px;
+  margin-bottom: 0px;
   border-radius: 10px;
   height: 8vh;
   width: 20vh;
@@ -64,15 +64,6 @@ button:hover {
   cursor: pointer;
 }
 
-#playAgain {
-  border-radius: 10px;
-  height: 8vh;
-  width: 20vh;
-  color: white;
-  background-color: var(--color1);
-  border: 3px solid var(--color2);
-  font-size: 3vh
-}
 
 .footer {
   display: flex;
@@ -100,17 +91,18 @@ button:hover {
 
 
 .scoreMessage {
-  font-size: 8vh
+  font-size: 8vh;
+  margin-bottom: 0
 }
 
 .gameOver{
   z-index: 2;
   position: absolute;
-  top: 20%;
+  margin-top: 20px;
   left: 30%;
   width: 40%;
-  background-color: var(--color1);
-  color: white;
+  background-color: white;
+  color: var(--color2);
   height: 50vh;
   border: 5px solid var(--color2);
   border-radius: 10px;
@@ -121,9 +113,20 @@ button:hover {
   align-items: center;
   justify-content: center;
   text-align: center;
-
-
 }
+
+#playAgain {
+  z-index: 2;
+  border-radius: 10px;
+  height: 8vh;
+  width: 30vh;
+  color: white;
+  background-color: var(--color1);
+  border: 3px solid var(--color2);
+  font-size: 3vh;
+  margin-top: 2vh
+}
+
 
 .timerContainer {
   display: flex;
@@ -147,6 +150,7 @@ button:hover {
 
 .answer-div {
   display: flex;
+  margin-top: 100px;
   flex-direction: row;
   justify-content: center;
   align-items: center
@@ -186,15 +190,12 @@ button {
 
 
 .correct-input {
-  border: 3px solid green;
-  border-radius: 2px;
-  outline: none;
+  outline: 3px solid green;
 }
 
 .incorrect-input {
-  border: 3px solid red;
-  border-radius: 2px;
-  outline: none
+
+  outline: 3px solid red
 }
 
 .bordered {

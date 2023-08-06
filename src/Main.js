@@ -64,16 +64,13 @@ const newGame = () =>{
     setScore(0)
     setIsGameOver(false)
     randomQuestion()
+    const userInputElement = document.getElementById('userAnswer')
+        userInputElement.focus()
     intervalRef.current = setInterval(reduceTime,1000)
     
 }
 
-useEffect(() => {
-    if (gameStarted) {
-        const userInputElement = document.getElementById('userAnswer')
-        userInputElement.focus()
-    }
-}, [gameStarted])
+
 
 
 
@@ -155,13 +152,21 @@ useEffect(() =>{
 const gameOver = () => {
     return(
         <div className = "gameOver">
-            <h2 >Game Over</h2>
+            <h2 style={{
+                color: "red"
+            }}>GAME OVER</h2>
             <h2 className="scoreMessage">Score: {score}</h2>
 
             <h2>High Score: {highScore}</h2>
  
            <button onClick={newGame} id="playAgain">Play again</button>
         </div> 
+    )
+}
+
+const newGameButton = () => {
+    return(
+        <div><button onClick={newGame} id="newgame">New Game</button></div>
     )
 }
 
@@ -205,20 +210,25 @@ document.onkeydown = (event) => {
 }
 }
 
+
+
     return (
         <div className="main">
             {isGameOver && gameOver()}
-            <button onClick={newGame} id="newgame">New Game</button>
-            {gameStarted && (
+            {gameStarted===false && newGameButton()}
             <div class="answer-div">
             <h2 className="question">{integer1}{operation}{integer2}{equals}</h2>
             <input type="text"
              id="userAnswer" 
-             name="userAnswer" 
+             name="userAnswer"  
              onChange={handleChange} 
              value={userAnswer} 
+             style = {{
+                border: gameStarted ? "2px solid black" : "none",
+                borderRadius: "2px"
+             }}
              className={correctInput ? "correct-input" : incorrectInput ? "incorrect-input" : ""}/>
-            </div>)}
+            </div>
             <h3 className="score">Score: {score}</h3>
             <h3 style = {{
                 color: time <= 5 ? "red" : ""
