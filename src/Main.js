@@ -90,7 +90,7 @@ function randomQuestion() {
             setEquals(" = ")     }
         if (operationChance === 3){
             setOperation(" ÷ ")
-            setAnswer(randinteger1() / randinteger2())
+            setAnswer(randinteger1() * randinteger2())
             setEquals(" = ")
         }
         console.log(answer)
