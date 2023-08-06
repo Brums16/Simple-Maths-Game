@@ -1,6 +1,5 @@
 To do maths game: 
 make level changeable 
-Add high score
 Improve division  so answers are integer only
-Add green or red feedback for answers
 Consider removing some states (the randomints probably don't need state, maybe the user input doesn't need it either)
+Remember to deploy to netlify if i make any significant changes
