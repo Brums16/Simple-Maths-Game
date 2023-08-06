@@ -1,7 +1,7 @@
 import './Style.css';
 import React, { useState, useRef, useEffect } from "react";
 import heart from './gameheart.png'
-import star from './gamestar.png'
+
 
 
 
