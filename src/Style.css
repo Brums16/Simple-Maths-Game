@@ -197,4 +197,12 @@ button {
   outline: none
 }
 
+.bordered {
+  all: inherit
+}
+
+.borderless {
+  border: none
+}
+
 
