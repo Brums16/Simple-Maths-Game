@@ -70,9 +70,9 @@ const newGame = () =>{
 }
 
 function randomQuestion() {
-        let operationChance = (Math.floor(Math.random()*3))
+        let operationChance = (Math.floor(Math.random()*4))
 
-        /*This needs changing to 4 to include division, use a UseEffect or something similar */
+
         
         if (operationChance === 0){
             setOperation(" + ")
@@ -89,10 +89,15 @@ function randomQuestion() {
             setAnswer(randinteger1() * randinteger2())   
             setEquals(" = ")     }
         if (operationChance === 3){
+            let dividend, divisor;
+        do {
+            dividend = randinteger1()
+            divisor = randinteger2()
+        } while (dividend % divisor !== 0)
             setOperation(" ÷ ")
-            setAnswer(randinteger1() * randinteger2())
+            setAnswer(dividend / divisor)
             setEquals(" = ")
-        }
+    }
         console.log(answer)
         return
     }
