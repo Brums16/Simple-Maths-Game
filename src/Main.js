@@ -34,14 +34,12 @@ function randint() {
 
 function randinteger1() {
     let randinteger1 = randint()
-    console.log(randinteger1)
     setInteger1(randinteger1)
     return randinteger1
 }
 
 function randinteger2() {
     let randinteger2 = randint()
-    console.log(randinteger2)
     setInteger2(randinteger2)
     return randinteger2
 }
@@ -109,12 +107,10 @@ function randomQuestion() {
 
 function checkAnswer(userAnswer, answer) {
     if (userAnswer == ""){
-        console.log("no answer provided")
         return
     }
     if (userAnswer == answer){
         setScore(score+1)
-        console.log("correct")
         setUserAnswer("")
         randomQuestion()
         setCorrectInput(true)
@@ -122,7 +118,6 @@ function checkAnswer(userAnswer, answer) {
             setCorrectInput(false);
           }, 500);
     } else {
-        console.log("wrong answer")
         setLives(lives-1)
         setUserAnswer("")
         randomQuestion()
@@ -139,7 +134,7 @@ useEffect(() =>{
         setHighScore(score)
     }
     }, [score])    
-/*this next part is listening to see if lives falls to 0 */
+/*this next part is listening to see if lives or time falls to 0 */
 
 useEffect(() =>{
     if (lives === 0||time === 0){
