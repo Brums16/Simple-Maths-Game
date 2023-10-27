@@ -160,7 +160,7 @@ const Main = () => {
 
   const livesDisplay = () => {
     const heartIcons = Array.from({ length: lives }, (_, index) => (
-      <img src={heart} key={index} className="heartIcon" />
+      <img src={heart} key={index} alt="heart icon" className="heartIcon" />
     ));
     return heartIcons;
   };
